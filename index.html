@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Anything</title>
+    <link rel="icon" type="image/png" href="OIP.webp"/>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('OIP.webp');
+            background-size: cover;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1{
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 5%;
+            background-image: linear-gradient(to right, #680aff57, #feb47b3f);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 style="color: white; margin-right: 20px;">Few Word Search</h1>
+        <div>
+            <input type="text" placeholder="Search something...">
+            <button onclick="search()">Search</button>
+        </main>
+    </main>
+</body>
+    <script>
+        const input = document.querySelector('input[type="text"]');
+        function search() {
+            const query = input.value;
+            if (query) {
+                const url = `https://www.pornhub.com/video/search?search=${encodeURIComponent(query)}`;
+                window.open(url, '_blank');
+            }
+        }
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                search();
+            }
+        });
+    </script>
+</html>
