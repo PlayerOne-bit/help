@@ -1,4 +1,4 @@
-##help with syntax in MD
+## help with syntax in MD
 
 ### Headers
 ```
@@ -59,7 +59,7 @@ two trailing spaces and press enter
 ```
 
 # Ideas
-
+1. Make a JCKC app
 
 # Day Lost
 
