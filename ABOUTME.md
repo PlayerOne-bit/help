@@ -17,7 +17,14 @@ Taught myself the basics such as variables, conditions, loops, arrays, functions
 30(+1) days later, I started my GitHub account at August 16, 2024.
 40 days later, My first repository was on September 24, 2024
 
-## TechStack
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Cell 1   | Cell 2   |
+## Skills:
+### Programming Languages:
+- JavaScript
+- Java
+- C#
+- Python
+### Frameworks:
+- React.js ([Web](https://react.dev/learn))
+- Electron.js ([Desktop](https://www.electronjs.org/docs/latest))
+- Node.js + Express.js ([JS Backend](https://expressjs.com))
+- 
