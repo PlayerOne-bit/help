@@ -26,5 +26,11 @@ Taught myself the basics such as variables, conditions, loops, arrays, functions
 ### Frameworks:
 - React.js ([Web](https://react.dev/learn))
 - Electron.js ([Desktop](https://www.electronjs.org/docs/latest))
+- React Native + Expo ([Mobile](https://reactnative.dev/docs/getting-started))
 - Node.js + Express.js ([JS Backend](https://expressjs.com))
-- test
+- ASP.NET ([C# Backend](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0))
+### Database:
+- PostgreSQL ([relational database](https://www.postgresql.org/docs/19/index.html))
+- SQLite ([local database](https://www.sqlite.org/docs.html))
+- MongoDB ([flexible database](https://www.mongodb.com/docs/))
+- Redis ([fast database](https://redis.io/docs/latest/))
