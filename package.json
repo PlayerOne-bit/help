@@ -1,0 +1,19 @@
+{
+  "name": "list-down-idea",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "index.js",
+  "scripts": {
+    "test": "run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlayerOne-bit/list-down-idea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PlayerOne-bit/list-down-idea/issues"
+  },
+  "homepage": "https://github.com/PlayerOne-bit/list-down-idea#readme"
+}
