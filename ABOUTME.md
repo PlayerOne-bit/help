@@ -11,10 +11,10 @@ int main(){
     return 0;
 }
 ```
-Everything changed.
-I started learning to code at July 17, 2024.
+Everything changed.  
+I started learning to code at July 17, 2024.  
 Taught myself the basics such as variables, conditions, loops, arrays, functions, and modules.  
-30(+1) days later, I started my GitHub account at August 16, 2024.
+30(+1) days later, I started my GitHub account at August 16, 2024.  
 40 days later, My first repository was on September 24, 2024
 
 ## Skills:
