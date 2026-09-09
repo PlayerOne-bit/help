@@ -58,7 +58,7 @@ Always do this when you are making major and minor changes so you can revert bac
 - `git restore <file-name>` = discard unstaged changes in a file (add `--staged` to undo `git add`)
 - `git log` = display past commits
 - `git revert <commit-id>` = to undo from one pushed commit
-- `git reset HEAD~1 --soft` = to undo commits in local (`HEAD-1` depicts go back 1 commit and replace `--soft` with `--hard` if wantpermanently delete changes)
+- `git reset HEAD~1 --soft` = to undo commits in local (`HEAD-1` depicts go back 1 commit and replace `--soft` with `--hard` if you want to permanently delete changes)
 
 
 
@@ -78,8 +78,47 @@ This would help install node dependencies such as:
 ```npm
 npm install express dotenv nodemon mongoose
 ```
-
+### Follow this structure:
+```
+|__config/              # Database and environment configurations
+|__controllers/         # Handles incoming HTTP requests and responses
+|__middlewares/         # Auth guards, logging, and error handlers
+|__models/              # Defines database schemas / ORM models
+|__routes/              # Maps URL endpoints to specific controllers
+|__services/            # Contains core business logic and calculations
+|__.env                 # Stores private environment variables and credentials
+|__.gitignore           # List of sensitive file names for git control
+|__index.js             # Entry point of the application to start the server
+|__package-lock.json    # Locks down the exact versions of installed packages
+|__package.json         # Lists project dependencies, metadata, and 
+```
 Create an `index.js`
 ```javascript
+//load .env variables
+require('dotenv').config();
+//import dependencies
+const express = require('express');
+const mongoose = require('mongoose');
+//models
+const ModelName = require('./models/ModelName');
+//routes
+const routesName = require('./routes/routesName');
+//Start Express.js App
+const app = express();
+const PORT = process.env.PORT || 5000;
+//Global Middlewares
+app.use(express.json());
+//Connect to Database
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('Connected to MongoDB!'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+//Check if backend is working
+app.get('/', (req, res) => {
+  res.send('Your backend is running!');
+});
+//API Routes
+app.use('/api/routes',routesName);
+//Start server listener
+app.listen(PORT, ()=>console.log(`Server is running on port ${PORT}`));
 
 ```
