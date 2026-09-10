@@ -1,8 +1,9 @@
 # HELP
 
 ### About this Repository:
-This contains `md` files to teach how to become a software developer
+This contains [.md](MD.md) files to teach how to become a software developer
 
 ### This contains:
-- MERN stack tutorial
-- Git syntax
+- [MERN Stack Tutorial](MERN.md)
+- [Git Tutorial](GIT.md)
+- [SQL Tutorial](SQL.md)
