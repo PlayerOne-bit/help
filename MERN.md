@@ -17,8 +17,6 @@ Go to environment variable, paste the path of the installed command to the user 
 6. Paste the `Parent folder path of the installed .exe`
 7. `OK` everything
 
-So In the terminal of your [Visual Studio Code](https://code.visualstudio.com/download?_exp_download=d53503e735)
-
 In GitHub create a [new repository](https://github.com/new):
 1. Add your repository name of the app
 2. Make the visibility either public or private
@@ -60,11 +58,11 @@ Always do this when you are making major and minor changes so you can revert bac
 - `git revert <commit-id>` = to undo from one pushed commit
 - `git reset HEAD~1 --soft` = to undo commits in local (`HEAD-1` depicts go back 1 commit and replace `--soft` with `--hard` if you want to permanently delete changes)
 
-
-
 Now create `.gitignore` file to prevent pushing unnecessary or sensitive files. Just list down "file names" such as `.env`, etc. to avoid leaks.
 
 ## __II. Backend Introduction__
+
+So In the terminal of your [Visual Studio Code](https://code.visualstudio.com/download?_exp_download=d53503e735)
 
 To create a `package.json` run this command:
 ```npm
@@ -96,29 +94,39 @@ Create an `index.js`
 ```javascript
 //load .env variables
 require('dotenv').config();
+
 //import dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+
 //models
 const ModelName = require('./models/ModelName');
+
 //routes
 const routesName = require('./routes/routesName');
+
 //Start Express.js App
 const app = express();
 const PORT = process.env.PORT || 5000;
+
 //Global Middlewares
 app.use(express.json());
+
 //Connect to Database
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB!'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
 //Check if backend is working
 app.get('/', (req, res) => {
   res.send('Your backend is running!');
 });
-//API Routes
+
+//API Routes Registration
 app.use('/api/routes',routesName);
+
 //Start server listener
 app.listen(PORT, ()=>console.log(`Server is running on port ${PORT}`));
 
 ```
+

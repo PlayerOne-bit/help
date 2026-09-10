@@ -1,4 +1,4 @@
-## HELP WITH SYNTAX FOR MD
+# `.md` Files Tutorial
 
 ### Headers
 ```
