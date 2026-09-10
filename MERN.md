@@ -1,5 +1,12 @@
 # __MERN Stack Tutorial:__
 
+## What is MERN Stack?
+### - M - MongoDB (Database)
+### - E - Express.js (Backend Framework)
+### - R - React.js (Frontend Framework)
+### - N - Node.js (Backend Engine)
+A powerful stack capable of making fast real web applications and using only one programming language which is Javascript.
+
 ## I. __Set Up__
 
 First, we need node package manager to install frameworks and dependencies via terminal
