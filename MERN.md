@@ -1,4 +1,4 @@
-# __Let's Create a MERN App Tutorial:__
+# __MERN Stack Tutorial:__
 
 ## I. __Set Up__
 

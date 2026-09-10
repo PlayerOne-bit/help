@@ -1,4 +1,4 @@
-# GIT Tutorial
+# `git` Tutorial
 
 Before we begin making an app always start with making version control using [Git](https://git-scm.com/install/)
 
