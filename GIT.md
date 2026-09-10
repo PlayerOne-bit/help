@@ -54,5 +54,3 @@ Always do this when you are making major and minor changes so you can revert bac
 - `git reset HEAD~1 --soft` = to undo commits in local (`HEAD-1` depicts go back 1 commit and replace `--soft` with `--hard` if you want to permanently delete changes)
 
 Now create `.gitignore` file to prevent pushing unnecessary or sensitive files. Just list down "file names" such as `.env`, etc. to avoid leaks.
-
-[Return](javascript:history.back())
