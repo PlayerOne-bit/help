@@ -65,7 +65,7 @@ ADD column_name data_type [constraint];
 ```
 - Modify an existing column's name
 ```sql
-ALTER COLUMN column_name data_type;
+RENAME COLUMN column_name to new_column_name;
 ```
 - Modify a data type with constraint
 ```sql
