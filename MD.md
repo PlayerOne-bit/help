@@ -49,8 +49,8 @@ two trailing spaces and press enter
 ```
 ### Check List
 ```
-[ ] Uncheck
-[X] Check
+- [ ] Uncheck
+- [x] Check
 ```
 ### Strikethrough & Highlights
 ```
