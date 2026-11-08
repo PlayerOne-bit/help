@@ -8,7 +8,7 @@ backend receives requests, validates data, works with a database, and
 returns responses to a frontend such as React, Flutter, or JavaScript.
 
 > **Target:** Beginner who knows basic C#\
-> **Tools:** .NET SDK, Visual Studio Code or Visual Studio, and SQLite\
+> **Tools:** .NET SDK, Visual Studio Code or Visual Studio, and a Supabase project with PostgreSQL\
 > **Project type:** ASP.NET Core Web API\
 > **Note:** Commands and APIs may vary slightly between .NET versions.
 > Use the current supported .NET SDK installed on your computer.
@@ -426,15 +426,15 @@ methods, but real applications need persistent storage.
 
 ------------------------------------------------------------------------
 
-# 9. Connect a Database with Entity Framework Core
+# 9. Connect PostgreSQL (Supabase) with Entity Framework Core
 
 **Entity Framework Core (EF Core)** is an Object-Relational Mapper
 (ORM). It lets you work with database records using C# objects and LINQ.
 
-Install the SQLite provider and EF Core design package:
+Install the PostgreSQL provider and EF Core design package:
 
 ``` bash
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 
@@ -491,9 +491,18 @@ Before `builder.Build()`, register the context:
 
 ``` csharp
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(
+    options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 ```
+
+## Get your Supabase PostgreSQL connection details
+
+1. Open your project in the [Supabase Dashboard](https://supabase.com/dashboard).
+2. Open **Project Settings → Database**.
+3. Find the database connection information. Supabase may provide direct and pooled connection strings.
+4. Copy the connection string intended for your backend environment.
+
+Use the connection string recommended by Supabase for your hosting environment. Direct connections are suitable when your hosting platform supports IPv6; otherwise, use the appropriate Supavisor pooler connection string. Do not expose database credentials in frontend code.
 
 ## Configure the connection string
 
@@ -502,7 +511,7 @@ In `appsettings.json`, add or update the `ConnectionStrings` section:
 ``` json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Data Source=taskmanager.db"
+    "DefaultConnection": "Host=YOUR_SUPABASE_DB_HOST;Port=5432;Database=postgres;Username=postgres;Password=YOUR_DATABASE_PASSWORD;SSL Mode=Require;Trust Server Certificate=true"
   }
 }
 ```
@@ -521,7 +530,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-EF Core creates the SQLite database file and the required table.
+EF Core applies the migration to your Supabase PostgreSQL database and creates the required table. Unlike SQLite, the database is hosted by Supabase, so you do not create a local `.db` file.
 
 If the command cannot find your `DbContext`, check that:
 
@@ -1143,7 +1152,7 @@ requirement yourself.
 -   [ ] Display one task by ID
 -   [ ] Update a task
 -   [ ] Delete a task
--   [ ] Store tasks in SQLite
+-   [ ] Store tasks in Supabase PostgreSQL
 -   [ ] Validate that a task title is not empty
 -   [ ] Return appropriate HTTP status codes
 -   [ ] Test all endpoints using Swagger or Postman
